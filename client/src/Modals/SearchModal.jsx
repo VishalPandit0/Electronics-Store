@@ -36,8 +36,8 @@ const SearchModal = ({setSearchopened}) => {
               <img className="w-full h-full" src={items?.attributes?.img?.data?.[0]?.attributes?.url} alt="" />
             </div>
             <div className="overflow-hidden flex flex-col justify-center">
-            <div className="text-ellipsis whitespace-nowrap overflow-hidden text-[16px] leading-[1] mb-[10px] font-[600] block  ">{items.attributes.name} </div>
-            <div className="text-ellipsis whitespace-nowrap overflow-hidden text-[14px] leading-[1] mb-[10px] text-[rgba(0,0,0,0.5)] block ">{items.attributes.desc}</div>
+            <div className="text-ellipsis whitespace-nowrap overflow-hidden text-[16px] leading-[1] mb-[10px] font-[600] block  ">{items?.attributes?.name} </div>
+            <div className="text-ellipsis whitespace-nowrap overflow-hidden text-[14px] leading-[1] mb-[10px] text-[rgba(0,0,0,0.5)] block ">{items?.attributes?.desc}</div>
           </div>
             </div>
             ))

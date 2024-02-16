@@ -28,6 +28,8 @@ const decrement = () => {
 
   return (
     <>
+    {
+      data &&
     <div className='my-[20px] mx-0 md:my-[75px] '>
       <div className='max-w-[calc(100%-20px)] my-0 mx-auto md:max-w-[1200px] '>
         <div className='flex flex-col md:flex-row'>
@@ -80,6 +82,7 @@ const decrement = () => {
       </div>
       <RelatedProducts productID={id} categoryID={product?.categories?.data?.[0]?.id}/>
     </div>
+    }
     </>
   )
 }

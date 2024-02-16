@@ -12,7 +12,7 @@ const SameCatProducts = ({ id, data }) => {
     return (
         <div onClick={handleClick} className='w-[calc(50%-5px)] mb-[20px] md:w-[calc(25%-15px)]'>
             <div className='bg-[rgba(0,0,0,0.07)] w-full h-[180px] flex items-center p-[25px] mb-[10px] md:h-[350px] '>
-                <img className='transition-all ease-in-out duration-300 hover:scale-125 block w-full' src={data.img.data[0].attributes.formats.small.url} alt="" />
+                <img className='transition-all ease-in-out duration-300 hover:scale-125 block w-full' src={data?.img?.data?.[0]?.attributes?.formats?.small?.url} alt="" />
             </div>
             <div>
                 <div className='text-[14px] block text-ellipsis text-nowrap overflow-hidden md:text-[16px] md:mb-[10px] '>
