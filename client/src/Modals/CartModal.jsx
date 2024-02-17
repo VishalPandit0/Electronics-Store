@@ -5,10 +5,12 @@ import Cartitems from './Cartitems';
 import { context } from '../utils/Context'; 
 import { loadStripe } from '@stripe/stripe-js' ;
 import { makePaymentReq } from '../utils/api';
+import spinner from '../assets/category/spinner.svg'
 
 const CartModal = ({ setCartopened }) => {
   const { cartSubtotal, cartItems } = useContext(context);
   const [stripe, setStripe] = useState(null); // State to store the Stripe instance
+  const[loading, setLoading]= useState(false);
 
   useEffect(() => {
     const initializeStripe = async () => {
@@ -22,7 +24,8 @@ const CartModal = ({ setCartopened }) => {
   }, []);
 
   const handlePayment = async () => {
-    try {      
+    try {    
+      setLoading(true);  
       if (!stripe) {
         console.error('Stripe has not been initialized.');
         return;
@@ -80,7 +83,11 @@ const CartModal = ({ setCartopened }) => {
                   <span className='text-[#8e2de2] mb-0 text-[20px] font-[700] uppercase'>&#8377; {cartSubtotal}</span>
                 </div>
                 <div className='py-[20px] px-[15px]'>
-                  <button onClick={handlePayment} className='outline-0 border-0 h-[50px] w-full items-center justify-center text-[15px] text-white bg-[#8e2ed2] border-1 rounded-full border-[#6516aa] hover:bg-white hover:text-[#8e2ed2] hover:border hover:border-[#8e2ed2] '>Checkout</button>
+                  <button onClick={handlePayment} className='outline-0 border-0 h-[50px] w-full items-center
+                   justify-center text-[15px] text-white bg-[#8e2ed2] border-1 rounded-full border-[#6516aa] hover:bg-[#8e2ed2c2] '>
+                   {!loading && `Checkout`}
+                   {loading && <img src={spinner} className='mx-auto'  />}
+                    </button>
                 </div>
               </div>
             </>

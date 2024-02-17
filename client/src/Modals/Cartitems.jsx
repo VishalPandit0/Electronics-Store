@@ -1,6 +1,5 @@
 import {React,useContext} from "react";
 import { MdClose } from "react-icons/md";
-import prod from '../assets/products/earbuds-prod-3.webp'
 import {context} from '../utils/Context.jsx'
 
 const Cartitems=()=>{
